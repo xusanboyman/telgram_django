@@ -1,0 +1,81 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<div class="aside">
+        <div id="settings" onclick="sidenav()"><img  src="{% static 'images/themes/main-menu.png ' %}" style="width:20px;height: 20px;"></div>
+        <div id="sidenav">
+            <div class="sidenavdiv">
+                <div class="sidenavbuttons">
+                    <div class="sidenav1">
+                        <img  src="{% static 'images/themes/user.jpg' %}" style="height: 50px;width: 50px;border-radius: 50%;filter: invert(1);">
+                        <div>
+                            <h3>xusanboyman</h3>
+                        </div>
+                    </div>
+                    <div class="sidenav2">
+                        <div class="settings">
+                            <img src="{% static 'images/themes/users.png' %}" title="New group" style="height: 20px;width: 20px;" alt="">
+                            <h3>New group</h3>
+                        </div>
+                    </div>
+                    <div class="sidenav2">
+                        <div class="settings">
+                            <img src="{% static 'images/themes/public-relation.png' %}" title="Add new chanel" style="height: 20px;width: 20px;"
+                                alt="">
+                            <h3>New Cahnel</h3>
+                        </div>
+                    </div>
+                    <div class="sidenav2">
+                        <div class="settings">
+                            <img src="{% static 'images/themes/instagram-stories.png' %}" title="stories" style="height: 20px;width: 20px;" alt="">
+                            <h3>Stories</h3>
+                        </div>
+                    </div>
+                    <div class="sidenav2">
+                        <div class="settings">
+                            <img src="{% static 'images/themes/wallet.png' %}" title="wallet" style="height: 20px;width: 20px;" alt="">
+                            <h3>Wallet</h3>
+                        </div>
+                    </div>
+                    <div class="sidenav2">
+                        <div class="settings">
+                            <img src="{% static 'images/themes/phone-book.png' %}" title="contact" style="height: 20px;width: 20px;" alt="">
+                            <h3>Contact</h3>
+                        </div>
+                    </div>
+                    <div class="sidenav2">
+                        <div class="settings">
+                            <img src="{% static 'images/themes/phone-call.png' %}" title="calls" style="height: 20px;width: 20px;" alt="">
+                            <h3>Calls</h3>
+                        </div>
+                    </div>
+                    <div class="sidenav2">
+                        <div class="settings">
+                            <img src="{% static 'images/themes/save-instagram.png' %}" style="height: 20px;width: 20px;" alt="">
+                            <h3>Saved Messages</h3>
+                        </div>
+                    </div>
+                    <div class="sidenav2">
+                        <div class="settings">
+                            <img src="{% static 'images/themes/settings.png' %}" style="height: 20px;width: 20px;" alt="">
+                            <h3>Settings</h3>
+                        </div>
+                    </div>
+                    <div class="sidenav2">
+                        <div class="settings">
+                            <img src="{% static 'images/themes/users.png' %}" style="height: 20px;width: 20px;" alt="">
+                            <div class="nightmode">
+                                <h3>Night Mode</h3>
+                                <label class="switch">
+                                    <input type="checkbox" id="night-mode-toggle">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

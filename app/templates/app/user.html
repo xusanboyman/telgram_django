@@ -1,0 +1,64 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+    <div class="chattinguser" id="chattinguser" onclick="closenav()">
+{% for message in messages %}
+    <div class="messages">
+        <div class="chatter">
+            <div style="justify-self: end;align-items: end;" class="flex">
+
+
+            <div style="flex-direction: column" class="sendermessage /* sendermessage/usermessage */">
+                <span class="sender-name">
+                {{ message.user.username }}
+                    <small>{{ message.timestamp }}</small>
+                </span>
+                    {% if message.message %}
+                        <!-- Text message -->
+                    <p>{{ message.message }}</p>
+                {% elif message.image %}
+                    <!-- Image message -->
+                    <img src="{{ message.image.url }}" alt="Image" style="max-width: 300px;">
+                {% elif message.file %}
+                    <!-- File message -->
+                    <a href="{{ message.file.url }}" download>Download File</a>
+                {% endif %}
+
+            </div>
+        </div>
+        <div class="timestamp">
+
+        </div>
+    </div>
+{% endfor %}
+        <div class="fixeds">
+            <div class="header">
+                <div>
+                    <div onclick="openinfo()">
+                        <h3>Name of user</h3>
+                        <p style="color: rgb(1,1,1,0.3);">last time ago</p>
+                    </div>
+                </div>
+                <div class="messagesearch">
+                    <a href=""><img src="{% static 'images/themes/search-interface-symbol.png' %}"
+                            style="width: 20px;height: 20px;padding: 7px;"></a>
+                    <a href=""><img src="{% static 'images/themes/phone-call.png' %}" style="width: 20px;height: 20px;padding:7px"></a>
+                    <a href=""><img src="{% static 'images/themes/more.png' %}" style="width: 20px;height: 20px;padding:7px"></a>
+                </div>
+            </div>
+            <div class="inputfield">
+                <div class="input">
+                    <label for="file"><img class="file" src="{% static 'images/themes/attach-file.png'%}" style="width: 20px;height: 20px;"></label>
+                    <input type="file" hidden id="file">
+                    <input id="textaria" class="input" type="text">
+                    <div class="smile">
+                        <img id="stop-record" src="{% static 'images/themes/stop-button.png' %}" style="display: none;width: 30px;height: 30px;">
+                        <img src="{% static 'images/themes/happy-face.png' %}" style="width: 30px;height: 30px;">
+                        <img id="start-record" src="{% static 'images/themes/micrphone.png' %}" style="width: 30px;height: 30px;">
+                        <img id="send" src="{% static 'images/themes/telegram (1).png' %}" style="width: 30px;height: 30px;display: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+    <div onclick="closenav()" id="all">
+        <div class="container">
+        <form action="" method="POST">
+            <div class="search">
+                <input placeholder="Search" type="text">
+                <div>
+                    <ul>
+                        <li><as>All</as> </li>
+                        <li><as >Channel</as> </li>
+                        <li><as>Private</as> </li>
+                        <li><as >Bot</as></li>
+                        <li><as >Group</as></li>
+                        <li><as>Unreaded</as></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+            <div class="users">
+                {% for room in rooms %}
+                    <a class="usersa" href="{% url 'room' room.id %}">
+                        <div class="user">
+                            <div class="userdiv">
+                                <img src="{% static 'images/themes/user.jpg' %}" class="avatar">
+                                <div class="username">
+                                    <div class="time">
+                                        <h2>{{ room.name }}</h2>
+                                        <div class="check">
+                                            <img src="{% static 'images/themes/double-check.png' %}" style="height: 30px; width: 30px;">
+                                            <p>6:13pm</p>
+                                        </div>
+                                    </div>
+                                    <p>message</p>  <!-- Placeholder for actual message content -->
+                                </div>
+                                <div class="time">
+                                    <!-- Additional time or content can go here -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

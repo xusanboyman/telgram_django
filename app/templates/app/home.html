@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+        {% include 'sidenav.html' %}
+    <div style="background: url('static/images/themes/img.png') 80% " id="big" class="big">
+        {% include 'app/list.html' %}
+        <div onclick="closenav()" style="width: 100%"></div>
+    </div>
+    <div id="userinfocentre"></div>
+
+<script src="{% static 'scripts/script.js' %}"></script>
+{% endblock %}
